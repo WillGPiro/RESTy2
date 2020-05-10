@@ -1,6 +1,6 @@
 import React, { createContext, useState, useContext } from 'react';
 import { makeFetch } from '../services/makeFetch.jsx';
-import { useLocalStorage } from '../components/History/HistoryList.jsx';
+import { useLocalStorage } from './localStorage.jsx';
 
 const RestyContext = createContext;
 
@@ -27,7 +27,7 @@ export const RestyProvider = ({ children }) => {
   };
 
   return (
-    <RestyContext.Provider value={{ url, method, body, onChange, onSubmit, response }}>
+    <RestyContext.Provider value={{ url, method, body, onChange, onSubmit, response, history }}>
       {children}
     </RestyContext.Provider>
   );
@@ -37,6 +37,9 @@ export const useResty = () => {
   const context = useContext(RestyContext);
   return context;
 };
+
+
+
 
 
 

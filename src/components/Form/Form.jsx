@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { useResty } from '../../hooks/RestyProvider';
 
 
@@ -45,7 +44,6 @@ const Form = () => {
     </form>
   </section>;
 };
-
 
 export default Form;
 
