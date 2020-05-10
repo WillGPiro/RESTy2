@@ -2,24 +2,24 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 
-const Form = (url, method, body, onSubmit, onChange) => (
+const Form = ({ url, method, body, onSubmit, onChange }) => (
   <section>
     <form className="Form" onSubmit={onSubmit} >
       <input type='text' name='url' value={url} onChange={onChange}/>
 
-      <input type='radio' name='method' value='GET' onSubmit={onSubmit}/>
+      <input type='radio' name='method' value='GET' checked={method === 'GET'} onSubmit={onSubmit}/>
       <label>GET:</label>
 
-      <input type='radio' name='method' value='POST' onSubmit={onSubmit}/>
+      <input type='radio' name='method' value='POST' checked={method === 'POST'} onSubmit={onSubmit}/>
       <label>POST:</label>
 
-      <input type='radio' name='method' value='PUT' onSubmit={onSubmit}/>
+      <input type='radio' name='method' value='PUT' checked={method === 'PUT'} onSubmit={onSubmit}/>
       <label>PUT:</label>
 
-      <input type='radio' name='method' value='PATCH' onSubmit={onSubmit}/>
+      <input type='radio' name='method' value='PATCH' checked={method === 'PATCH'} onSubmit={onSubmit}/>
       <label>PATCH:</label>
 
-      <input type='radio' name='method' value='DELETE' onSubmit={onSubmit}/>
+      <input type='radio' name='method' value='DELETE' checked={method === 'DELETE'} onSubmit={onSubmit}/>
       <label>DELETE:</label>
 
       <button>GO!</button>
