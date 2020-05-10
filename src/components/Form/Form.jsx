@@ -38,7 +38,7 @@ const Form = ({ url, method, body, onSubmit, onChange }) => (
       <textarea name="body" value={body} 
         onChange={onChange}>
       </textarea>
-      
+
     </form>
   </section>
 );
@@ -50,5 +50,9 @@ Form.propTypes = {
   onSubmit: PropTypes.func.isRequired,
   onChange: PropTypes.func.isRequired,
 };
+
+export default Form;
+
+
 
 
