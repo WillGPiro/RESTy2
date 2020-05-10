@@ -1,14 +1,13 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import { useResty } from '../../hooks/RestyProvider';
 
-const Response = ({ response }) => (
-  <section>
-    <pre>{JSON.stringify(response, null, 2)}</pre>
-  </section>
-);
-
-Response.propTypes = {
-  response: PropTypes.string.isRequired
+const Response = () => {
+  const { response } = useResty();
+  return (
+    <section>
+      <pre>{JSON.stringify(response, null, 2)}</pre>
+    </section>
+  );
 };
 
 export default Response;

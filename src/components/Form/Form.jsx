@@ -46,13 +46,6 @@ const Form = () => {
   </section>;
 };
 
-Form.propTypes = {
-  url: PropTypes.string.isRequired,
-  method: PropTypes.string.isRequired,
-  body: PropTypes.string.isRequired,
-  onSubmit: PropTypes.func.isRequired,
-  onChange: PropTypes.func.isRequired,
-};
 
 export default Form;
 
