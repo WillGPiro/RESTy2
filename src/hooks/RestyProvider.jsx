@@ -1,4 +1,5 @@
 import React, { createContext, useState, useContext } from 'react';
+import { makeFetch } from '../services/makeFetch.jsx';
 
 const RestyContext = createContext;
 
@@ -13,8 +14,14 @@ export const RestyProvider = ({ children }) => {
     if(target.name === 'body') setUrl(target.value);
   };
 
+  const onSubmit = event => {
+    event.preventDefault();
+    makeFetch(url, method, body);
+      .then(response => console.log(response));
+  };
+
   return (
-    <RestyContext.Provider value={{ url, method, body, onChange }}>
+    <RestyContext.Provider value={{ url, method, body, onChange, onSubmit }}>
       {children}
     </RestyContext.Provider>
   );

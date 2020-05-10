@@ -4,7 +4,7 @@ import { useResty } from '../../hooks/RestyProvider';
 
 
 const Form = () => {
-  const { url, method, body, onChange } = useResty();
+  const { url, method, body, onChange, onSubmit } = useResty();
 
   <section>
     <form className="Form" onSubmit={onSubmit} >
