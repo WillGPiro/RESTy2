@@ -1,8 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { useResty } from '../../hooks/RestyProvider';
 
 
-const Form = ({ url, method, body, onSubmit, onChange }) => (
+const Form = () => {
+  const { url, method, body, onChange } = useResty();
+
   <section>
     <form className="Form" onSubmit={onSubmit} >
       <input type='text' name='url' value={url} 
@@ -40,8 +43,8 @@ const Form = ({ url, method, body, onSubmit, onChange }) => (
       </textarea>
 
     </form>
-  </section>
-);
+  </section>;
+};
 
 Form.propTypes = {
   url: PropTypes.string.isRequired,
